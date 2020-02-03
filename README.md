@@ -90,92 +90,92 @@ sophomore, junior, senior
 
 - spGetStudentByCourseId: Get Student ID and Fullname By CourseID:
 
-● Parameter: courseId
+Parameter: courseId
 
-● Return: studentId, FullName
+Return: studentId, FullName
 
 - spGetCourseByStudentId: Get Course Information Taken By Student ID:
 
-● Parameter: studentId
+Parameter: studentId
 
-● Return: courseId, FullName
+Return: courseId, FullName
 
-- spGetHonorStuden​t: Get Honor Student List:
+- spGetHonorStudent: Get Honor Student List:
 
-● Return: studentId, FullName, GPA, class, email
+Return: studentId, FullName, GPA, class, email
 
 - spGetStudentUnderCertainGPA: Get Student ID, Name, GPA, class Under a Certain GPA:
 
-● Return: studentId, FullName, GPA, class
+Return: studentId, FullName, GPA, class
 
 - spGetProfessorNoEmail: Get a list of professors without emails: 
 
-● Return: professorId, FullName
+Return: professorId, FullName
 
  - spGetCountByProfessorCourse: Get Number of courses taught by given professor:
  
-● Parameter: professorId
+Parameter: professorId
 
-● Return:numberOfCourse
+Return:numberOfCourse
 
 - spGetNumberofStudentsByCourseId: Get total number of students in a specific course
 
-● Return:numberOfStudents
+Return:numberOfStudents
 
 - spGetHonorStudentByCourseId: Get the number of honor students in certain course
 
-● Parameter:courseId
+Parameter:courseId
 
-● Return:courseId, name, studentId, firstName, lastName
+Return:courseId, name, studentId, firstName, lastName
 
 - spGetProfessorNoPhoneByDepartment: List all the professors in certain department who doesn’t have a phone number
 
-● Parameter:department
+Parameter:department
 
-● Return: professorId, firstName, lastName
+Return: professorId, firstName, lastName
 
 - spGetStudentInNoCourse: Get a list of students that are not registered in any classes
 
-● Return: studentId, FullName, GPA, email
+Return: studentId, FullName, GPA, email
 
 - spGetProfessorWithNoCourses: Get a list of professors that are not teaching any classes
 
-● Return: professorId, FullName, email
+Return: professorId, FullName, email
 
 - spGetStudentByProfessorId: Get a list of students that are taught by a specific professor.
 
-● Parameter: professorId
+Parameter: professorId
 
-● Return : studentId, FullName, email
+Return : studentId, FullName, email
 
 - spCourseNotFullCpacity:Get a list of courses where capacity is not full
 
-● Return: courseId, name, remainedCapacity
+Return: courseId, name, remainedCapacity
 
 - spGetProfessorHavingDifferentLocation: Get a list of professors with locations different from their departments' locations 
 
-● Return: professorId, fullName,
+Return: professorId, fullName,
 
 - spGetStudentsTakingMultiCourseSameProfessor: Get a list of students taking multiple courses of the same professor
 
-● Parameter: studentId (default 0)
+Parameter: studentId (default 0)
 
-● Return: studentId, professorId, Number of courses
+Return: studentId, professorId, Number of courses
 
 - spGetStudentsGpaGreaterSameDepartment: Get a list of students whose GPA is greater than 3.0 and taking multiple courses of the same department
 
-● Parameter: studentId (default 0)
+Parameter: studentId (default 0)
 
-● Return: studentId, gpa, Number of courses
+Return: studentId, gpa, Number of courses
 
 - spGetStudentScriptTakingMultipleCourses: Return a List of Students who take multiple courses in multiple departments. Also, if their GPA is below 2.0, return "F", 2.0 ~2.5 return"D", 2.5~3.0 return "C",3.0~3.5 return"B"3.5~4.0 return"A".
 
-● Return: studentId, Script
+Return: studentId, Script
 
 - spGetHighestHonoredStudentsDepartment: Return the department has the largest number of honor students.
 
-● Return: departmentId, departmentName, NumOfHonorStudent
+Return: departmentId, departmentName, NumOfHonorStudent
 
 - spGetProfessorCreditHours: Return all the professors to see how many credit hours they have. If they have more than 6 credit hours course, return "too much course", if they have more than 4 and less than or equal to 6 credit hours, return "enough", if they have less than 4 credit hours, return "add some courses". 
 
-● Return: professorId, Name, totalHours, Comments
+Return: professorId, Name, totalHours, Comments
