@@ -1,0 +1,23 @@
+studentId 	firstName	lastName	creditEarned	class	isHonorStudent	email	GPA
+1	John	Smith	37	Freshman	1	smij@gmail.com	3.7
+2	Mary	Smith	14	Freshman	0	smitd@miami.edu	3.0
+3	Peter	Gaddis	40	Sophomore	0	gdpeter@icloud.com	2.0
+4	Kate 	Jane	90	Junior	1	janeq@miam.edu	3.6
+5	Katie	James	87	Senior	0	jamesk@gmail.com	4.0
+6	Andrew	Pg	17	Freshman	0	pgan@yahoo.com	2.8
+7	Mathew	Smith	67	Junior	0	smitmat@miami.com	3.4
+8	Jane	Drew	90	Senior	1	drewjan@icloud.com	3.5
+9	Cody	Simson	78	Junior	0	sims@brain.edu	3.4
+10	Jack	Sydney	98	Senior	0	sydney@bread.com	2.1
+11	Sydney	Campell	120	Junior	1	camsyd@miami.edu	1.8
+12	Britney	Spears	110	Senior	1	spearb@gmail.com	1.7
+13	Amy	Jackson	113	Sophomore	1	jacka@miami.edu	3.8
+14	Mickey	Cheng	20	Freshman	0	cheng@gmail.com	3.9
+15	Stephanie	Smith	40	Sophomore	0		3.5
+16	Chen	Do	45	Freshman	0		2.4
+17	May	Park	56	Sophomore	1		4.0
+18	Baekyun	Byun	87	Junior	1		1.5
+19	Jimin	Park	45	Freshman	0	parkjimin@gmail.com	3.3
+20	Ben	Ten	67	Junior	0	ten@miamioh.edu	2.1
+21	Frez	Zumavich	87	Senior	1	zumfrez@gmail.com	2.6
+22	Janie	Hye	76	Sophomore	0		3.4

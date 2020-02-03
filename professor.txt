@@ -1,0 +1,7 @@
+professorId	firstName	lastName	department	office	phone	email
+1	Michael	Park	1	BEN 231	5136802245	park2@miami.edu
+2	Ben	Stevens	1	BEN 121		steb@miami.edu
+3	Jane	Kate	2	BAC 101	5132241234	
+4	Jack	Simsons	3	SHR 121		simsons123@google.com
+5	Krumpe	Jacksons	4	HUG 191	5135876152	parkm@miami.edu
+6	Katie	Smith	2	BAC 211	5134560987	smith@miami.edu

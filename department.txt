@@ -1,0 +1,6 @@
+departmentId	departmentName	location	departmentChairId	phone
+1	computerscience	BEN	1	5131231234
+2	math	BAC	3	5132335432
+3	physics	KRG	2	5132041234
+4	chemistry	HUG	4	5132931234
+5	statistics	FSB	2	NULL
