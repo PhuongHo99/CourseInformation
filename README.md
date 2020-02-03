@@ -170,3 +170,9 @@ Return: departmentId, departmentName, NumOfHonorStudent
 - spGetProfessorCreditHours: Return all the professors to see how many credit hours they have. If they have more than 6 credit hours course, return "too much course", if they have more than 4 and less than or equal to 6 credit hours, return "enough", if they have less than 4 credit hours, return "add some courses". 
 
 Return: professorId, Name, totalHours, Comments
+
+### 3. ER diagram of the database with an explanation of each entity and relationship for your reference:
+
+*The relations between table is described below (the data is made up):*
+
+![alt text](https://github.com/PhuongHo99/CourseInformation/blob/master/ER.png "Display1")
