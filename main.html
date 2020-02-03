@@ -1,0 +1,468 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Course Information Main Page</title>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+    </script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <style>
+        body, h1, h2, h3, h4, h5 {
+            font-family: "Raleway", sans-serif
+        }
+    </style>
+</head>
+<body class="w3-light-grey">
+
+    <!-- Header -->
+    <div class="w3-content" style="max-width:1400px">
+        <header class="w3-container w3-center w3-padding-32">
+            <h1><b>Course Information</b></h1>
+            <p>Welcome to the blog of <span class="w3-tag">Phuong Ho and Ziyang Song</span></p>
+        </header>
+
+        <img src="https://www.intelligent.com/wp-content/uploads/2013/06/chapter_pic01-2.jpg" height="400" alt="Nature" style="width:100%">
+
+        <div class="w3-row">
+            <h1>Actions: </h1>
+
+            <p>
+                <input type="button" id="btnView" value="View All the students information" class="btn btn-primary" />
+            </p>
+            <p>
+                <input type="button" id="btnStudentCourse" value="Get courses information by studentId" class="btn btn-primary" data-toggle="modal" data-target="#modStudentCourse" />
+            </p>
+            <p>
+                <input type="button" id="btnAddStudent" value="Add a student into a class" class="btn btn-primary" data-toggle="modal" data-target="#modAddStudent" />
+            </p>
+            <p>
+                <input type="button" id="btnUpdateStudent" value="Update student's information" class="btn btn-primary" data-toggle="modal" data-target="#modUpdateStudent" />
+            </p>
+            <p>
+                <input type="button" id="btnDelete" value="Delete a student" class="btn btn-primary" data-toggle="modal" data-target="#modDeleteStudent" />
+            </p>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="modStudents" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">View Students</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <ol id="ulList" class="list-group"></ol>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modStudentCourse" tabindex="-1" role="dialog" aria-labelledby="stuCourseModLab" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="stuCourseModLab">Course Students</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="padding:20px; width:500px;">
+                        <table class="table table-sm" width="200">
+                            <tr>
+                                <th>Student Id:</th>
+                                <td><input type="number" id="txtStudentId" class="form-control" /></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="button" id="btnGetCourse" value="Get Courses Information" class="btn btn-primary" />
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2">
+                                    <!-- ol is the container that will store the lists -->
+                                    <ol id="ulStuCourseList" class="list-group"></ol>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modAddStudent" tabindex="-1" role="dialog" aria-labelledby="stuCourseModLab" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="stuAddModLab">Add Students</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="padding:20px; width:500px;">
+                        <table class="table table-sm" width="200">
+                            <tr>
+
+                                <th>First Name:</th>
+                                <td><input type="text" id="txtfirstName" class="form-control" /></td>
+                            </tr>
+                            <tr>
+                                <th>Last Name:</th>
+                                <td><input type="text" id="txtlastName" class="form-control" /></td>
+                            </tr>
+                            <tr>
+                                <th>Credit Earned:</th>
+                                <td><input type="number" id="txtcreditEarned" class="form-control" /></td>
+
+                            </tr>
+                            <tr>
+                                <th>Class:</th>
+                                <td><input type="text" id="txtClass" class="form-control" /></td>
+                            </tr>
+                            <tr>
+                                <th>Honor Student: (true or false)</th>
+                                <td><input type="text" id="txtisHonoredStudent" class="form-control" /></td>
+                            </tr>
+                            <tr>
+                                <th>Email: </th>
+                                <td><input type="text" id="txtEmail" class="form-control" /></td>
+                            </tr>
+                            <tr>
+                                <th>GPA:</th>
+                                <td><input type="text" id="txtGPA" class="form-control" /></td>
+                            </tr>
+
+                            <tr>
+                                <td></td>
+                                <td>
+                                    <input type="button" id="btnAdd" value="Add" class="btn btn-primary" />
+                                    <input type="button" id="btnClearA" value="Clear" class="btn btn-danger" />
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2">
+                                    <!-- ol is the container that will store the lists -->
+                                    <ol id="ulAddStudent" class="list-group"></ol>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modUpdateStudent" tabindex="-1" role="dialog" aria-labelledby="stuCourseModLab" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="stuUpdateModLab">Update Students</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="padding:20px; width:500px;">
+                        <table class="table table-sm" width="200">
+                            <tr>
+
+                                <th>Student ID:</th>
+                                <td><input type="number" id="txtstudentId1" class="form-control" /></td>
+                            </tr>
+                            <tr>
+
+                                <th>First Name:</th>
+                                <td><input type="text" id="txtfirstName1" class="form-control" /></td>
+                            </tr>
+                            <tr>
+                                <th>Last Name:</th>
+                                <td><input type="text" id="txtlastName1" class="form-control" /></td>
+                            </tr>
+                            <tr>
+                                <th>Credit Earned:</th>
+                                <td><input type="number" id="txtcreditEarned1" class="form-control" /></td>
+
+                            </tr>
+                            <tr>
+                                <th>Class:</th>
+                                <td><input type="text" id="txtClass1" class="form-control" /></td>
+                            </tr>
+                            <tr>
+                                <th>Honor Student: (true or false)</th>
+                                <td><input type="text" id="txtisHonoredStudent1" class="form-control" /></td>
+                            </tr>
+                            <tr>
+                                <th>Email: </th>
+                                <td><input type="text" id="txtEmail1" class="form-control" /></td>
+                            </tr>
+                            <tr>
+                                <th>GPA:</th>
+                                <td><input type="text" id="txtGPA1" class="form-control" /></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="button" id="btnUpdate" value="Update" class="btn btn-primary" />
+                                    <input type="button" id="btnClearU" value="Clear" class="btn btn-danger" />
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2">
+                                    <!-- ol is the container that will store the lists -->
+                                    <ol id="ulUpdateStudent" class="list-group"></ol>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="modDeleteStudent" tabindex="-1" role="dialog" aria-labelledby="stuDeleteModLab" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="stuDeleteModLab">Delete Students</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div style="padding:20px; width:500px;">
+                        <table class="table table-sm" width="200">
+                            <tr>
+
+                                <th>Student ID:</th>
+                                <td><input type="number" id="txtstudentId2" class="form-control" /></td>
+                            </tr>
+
+                            <tr>
+                                <td>
+                                    <input type="button" id="btnDeleteStudent" value="Delete" class="btn btn-primary" />
+                                    <input type="button" id="btnClearD" value="Clear" class="btn btn-danger" />
+
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td colspan="2">
+                                    <!-- ol is the container that will store the lists -->
+                                    <ol id="ulDelete" class="list-group"></ol>
+                                </td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var ulList = $('#ulList');
+            //===================================================================================================
+            // Get a list of random cars from an API
+            //===================================================================================================
+            $('#btnView').click(function () {
+                ajax("getStudent", {
+                }, function (data) {
+                    ulList.empty();
+                    $.each(data, function (index, val) {
+                        ulList.append('<li class="list-group-item">' +
+                            '<img src=https://robohash.org/' + val.studentId + '.png width="50" />' +
+                            val.studentId + ' - ' + val.firstName + ' ' + val.lastName + ' - ' + val.creditEarned + '-' + val.class + ' - '
+                            + val.isHonorStudent + ' - ' + val.email + ' - ' + val.GPA +
+                            '</li>')
+                    });
+                    $('#modStudents').modal();
+                });
+            });
+
+
+            $('#btnGetCourse').click(function () {
+                var studentId = $('#txtStudentId');
+                var ulStuCourseList = $('#ulStuCourseList');
+                ajax("getCourseByStudentId", { "studentId": studentId.val() }, function (data) {
+                    ulStuCourseList.empty();
+                    $.each(data, function (index, val) {
+                        ulStuCourseList.append('<li class="list-group-item">' +
+                            '<img src=https://robohash.org/' + val.ProfessorName.replace(' ', '') + '.png width="50" />' +
+                            val.ProfessorName + ' - ' + val.name + ', ' + val.location +
+                            '</li>')
+                    });
+                });
+            });
+
+            $('#btnAdd').click(function () {
+                var firstName = $('#txtfirstName');
+                var lastName = $('#txtlastName');
+                var credit = $('#txtcreditEarned');
+                var classYr = $('#txtClass');
+                var honor = $('#txtisHonoredStudent');
+                var email = $('#txtEmail');
+                var gpa = $('#txtGPA');
+                var ulAddStudent = $('#ulAddStudent');
+                ajax("addStudent", {
+                    "FirstName": firstName.val(), "LastName": lastName.val(), "credit": credit.val(), "classYr": classYr.val(),
+                    "honor": honor.val(),
+                    "Email": email.val(), "GPA": gpa.val()
+                }, function (data) {
+                    ulAddStudent.empty();
+                    $.each(data, function (index, val) {
+                        ulAddStudent.append('<li class="list-group-item">' +
+                            '<img src=https://robohash.org/' + val.studentId + '.png width="50" />' +
+                            val.studentId + ' - ' + val.firstName + ' ' + val.lastName + ' - ' + val.creditEarned + '-' + val.class + ' - '
+                            + val.isHonorStudent + ' - ' + val.email + ' - ' + val.GPA +
+                            '</li>')
+                    });
+                });
+            });
+
+            $('#btnUpdate').click(function () {
+                var ulUpdateStudent = $('#ulUpdateStudent');
+                var studentId = $('#txtstudentId1');
+                var firstName = $('#txtfirstName1');
+                var lastName = $('#txtlastName1');
+                var credit = $('#txtcreditEarned1');
+                var classYr = $('#txtClass1');
+                var honor = $('#txtisHonoredStudent1');
+                var email = $('#txtEmail1');
+                var gpa = $('#txtGPA1');
+                 ajax("updateStudent", {
+                    "studentId" : studentId.val(),
+                    "FirstName": firstName.val(), "LastName": lastName.val(), "credit": credit.val(), "classYr": classYr.val(),
+                    "honor" : honor.val(),
+                    "Email": email.val(), "GPA": gpa.val()
+                }, function (data) {
+                         ulUpdateStudent.empty();
+                    $.each(data, function (index, val) {
+                        ulUpdateStudent.append('<li class="list-group-item">' +
+                            '<img src=https://robohash.org/' + val.studentId + '.png width="50" />' +
+                            val.studentId + ' - ' + val.firstName + ' ' + val.lastName + ' - ' + val.creditEarned +'-' + val.class + ' - '
+                            + val.isHonorStudent + ' - ' + val.email + ' - ' + val.GPA +
+                            '</li>')
+                    });
+                });
+            });
+            var ulDeleteS = $('#ulDelete');
+            var studentIdD = $('#txtstudentId2');
+            $('#btnDeleteStudent').click(function () {
+                ajax("deleteStudent", {
+                    "studentId" : studentIdD.val()
+                }, function (data) {
+                     ulDeleteS.empty();
+                     $.each(data, function (index, val) {
+                            ulDeleteS.append('<li class="list-group-item">' +
+                        '<img src=https://robohash.org/' + val.studentId + '.png width="50" />' +
+                        val.studentId + ' - ' + val.firstName + ' ' + val.lastName + ' - ' + val.creditEarned +'-' + val.class + ' - '
+                        + val.isHonorStudent + ' - ' + val.email + ' - ' + val.GPA +
+                        '</li>')
+                     });
+                });
+            });
+
+
+            //===================================================================================================
+            // Button to clear the fields
+            //===================================================================================================
+            $('#btnClearD').click(function () {
+                ulDeleteS.empty();
+                studentIdD.val('');
+            });
+
+            $('#btnClearA').click(function () {
+                var firstName = $('#txtfirstName');
+                var lastName = $('#txtlastName');
+                var credit = $('#txtcreditEarned');
+                var classYr = $('#txtClass');
+                var honor = $('#txtisHonoredStudent');
+                var email = $('#txtEmail');
+                var gpa = $('#txtGPA');
+                var ulAddStudent = $('#ulAddStudent');
+                ulAddStudent .empty();
+                firstName.val('');
+                lastName.val('');
+                credit.val('');
+                classYr.val('');
+                honor.val('');
+                email.val('');
+                gpa.val('');
+            });
+
+
+            $('#btnClearU').click(function () {
+                var ulUpdateStudent = $('#ulUpdateStudent');
+                var studentId = $('#txtstudentId1');
+                var firstName = $('#txtfirstName1');
+                var lastName = $('#txtlastName1');
+                var credit = $('#txtcreditEarned1');
+                var classYr = $('#txtClass1');
+                var honor = $('#txtisHonoredStudent1');
+                var email = $('#txtEmail1');
+                var gpa = $('#txtGPA1');
+                ulUpdateStudent .empty();
+                studentId.val('');
+                firstName.val('');
+                lastName.val('');
+                credit.val('');
+                classYr.val('');
+                honor.val('');
+                email.val('');
+                gpa.val('');
+            });
+            //===================================================================================================
+            // Generic method for AJAX calls
+            //===================================================================================================
+            function ajax(method, data, fn) {
+                $.ajax({
+                    type: 'POST',
+                    url: 'api.asmx/' + method,
+                    dataType: 'json',
+                    data: data,
+                    success: fn
+                });
+            }
+
+        });
+    </script>
+
+</body>
+</html>

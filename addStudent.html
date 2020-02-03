@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Sample Webservice Call</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous">
+    </script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+
+    <div style="padding:20px; width:500px;">
+        <table class="table table-sm" width="200">
+            <tr>
+
+                <th>First Name:</th>
+                <td><input type="text" id="txtfirstName" class="form-control" /></td>
+            </tr>
+            <tr>
+                <th>Last Name:</th>
+                <td><input type="text" id="txtlastName" class="form-control" /></td>
+            </tr>
+            <tr>
+                <th>Credit Earned:</th>
+                <td><input type="text" id="txtcreditEarned" class="form-control" /></td>
+
+            </tr>
+            <tr>
+                <th>Class:</th>
+                <td><input type="text" id="txtClass" class="form-control" /></td>
+            </tr>
+            <tr>
+                <th>Honor Student: (true or false)</th>
+                <td><input type="text" id="txtisHonoredStudent" class="form-control" /></td>
+            </tr>
+            <tr>
+                <th>Email: </th>
+                <td><input type="text" id="txtEmail" class="form-control" /></td>
+            </tr>
+            <tr>
+                <th>GPA:</th>
+                <td><input type="text" id="txtGPA" class="form-control" /></td>
+            </tr>
+
+            <tr>
+                <td></td>
+                <td>
+                    <input type="button" id="btnAdd" value="Add" class="btn btn-primary" />
+                    <input type="button" id="btnClear" value="Clear" class="btn btn-danger" />
+
+                </td>
+            </tr>
+
+            <tr>
+                <td colspan="2">
+                    <!-- ol is the container that will store the lists -->
+                    <ol id="ulList" class="list-group"></ol>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            var ulList = $('#ulList');
+            var firstName = $('#txtfirstName');
+            var lastName = $('#txtlastName');
+            var credit = $('#txtcreditEarned');
+            var classYr = $('#txtClass');
+            var honor = $('#txtisHonoredStudent');
+            var email = $('#txtEmail'); 
+            var gpa = $('#txtGPA');
+            //===================================================================================================
+            // Get a list of random cars from an API
+            //===================================================================================================
+            $('#btnAdd').click(function () {
+                ajax("addStudent", {
+                    "FirstName": firstName.val(), "LastName": lastName.val(), "credit": credit.val(), "classYr": classYr.val(),
+                    "honor" : honor.val(),
+                    "Email": email.val(), "GPA": gpa.val()
+                }, function (data) {
+                         ulList.empty();
+                    $.each(data, function (index, val) {
+                        ulList.append('<li class="list-group-item">' +
+                            '<img src=https://robohash.org/' + val.studentId + '.png width="50" />' +
+                            val.studentId + ' - ' + val.firstName + ' ' + val.lastName + ' - ' + val.creditEarned +'-' + val.class + ' - '
+                            + val.isHonorStudent + ' - ' + val.email + ' - ' + val.GPA +
+                            '</li>')
+                    });
+                });
+            });
+
+            //===================================================================================================
+            // Button to clear the fields
+            //===================================================================================================
+            $('#btnClear').click(function () {
+                ulList.empty();
+                studentId.val('');
+            });
+
+
+            //===================================================================================================
+            // Generic method for AJAX calls
+            //===================================================================================================
+            function ajax(method, data, fn) {
+                $.ajax({
+                    type: 'POST',
+                    url: 'api.asmx/' + method,
+                    dataType: 'json',
+                    data: data,
+                    success: fn
+                });
+            }
+
+        });
+    </script>
+</body>
+</html>
