@@ -1,8 +1,9 @@
 # CourseInformation
-Our project is about building relational data for the information on courses along with students, professors, etc. We aim at creating stored procedures and upload to a Web Server using the script provided. You can also load data through XML files by changing the code at the end of the .sql file uploaded.
-
+*Our project is about building relational data for the information on courses along with students, professors, etc. We aim at creating stored procedures and upload to a Web Server using the script provided. You can also load data through XML files by changing the code at the end of the .sql file uploaded.*
+___
 
 ### 1. Steps to use the system:
+
 *a. Download and Open the Main Page*
 
 __In the ZIP file, we include:__
@@ -74,6 +75,7 @@ sophomore, junior, senior
 ● Delete Student: click one the last box and provide the following information of the student you want to delete:
 (please make sure that you want to delete this student’s record)
 - Student ID: integer (should be a valid ID and does not have any records in CourseStudent since this is used as a foreign key)
+___
 
 ### 2. List each stored procedure (the parameters and what is expecting to return):
 
@@ -170,6 +172,7 @@ Return: departmentId, departmentName, NumOfHonorStudent
 - spGetProfessorCreditHours: Return all the professors to see how many credit hours they have. If they have more than 6 credit hours course, return "too much course", if they have more than 4 and less than or equal to 6 credit hours, return "enough", if they have less than 4 credit hours, return "add some courses". 
 
 Return: professorId, Name, totalHours, Comments
+___
 
 ### 3. ER diagram of the database with an explanation of each entity and relationship for your reference:
 
