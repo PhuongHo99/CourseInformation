@@ -5,25 +5,16 @@ Our project is about building relational data for the information on courses alo
 ### 1. Steps to use the system:
 *a. Download and Open the Main Page*
 
-- In the ZIP file, we include:
+__In the ZIP file, we include:__
 
-● project.sql
+- project.sql
 
-● 5 text files:
+- 5 text files: courseAndStudent.txt, department.txt, course.txt, student.txt, professor.txt
 
-○ courseAndStudent.txt
+- ‘project’ folder
 
-○ department.txt
-
-○ course.txt
-
-○ student.txt
-
-○ professor.txt
-
-● ‘project’ folder
-
-- To create the database, first download all the .txt files (5) and put them to C:\temp location, so the SQL file can load data in.
+__To create the database__
+- First download all the .txt files (5) and put them to C:\temp location, so the SQL file can load data in.
 
 - Then, open project.sql and run on (localdb)\MSSQLLocalDB server. The database will be created. You are able to look at stored procedures or views and test.
 
@@ -46,43 +37,43 @@ information of the student you want to retrieve: ○ Student ID: integer (should
 
 ● Add Student: click 3rd box and provide the following information of the student you want to add:
   
-○ First Name: a string with max length of 200
+- First Name: a string with max length of 200
 
-○ Last Name: a string with max length of 200
+- Last Name: a string with max length of 200
 
-○ Credit He/She Earned: positive integer
+- Credit He/She Earned: positive integer
 
-○ Class (the year that the student is in): one of the following: freshman,
+- Class (the year that the student is in): one of the following: freshman,
 sophomore, junior, senior
 
-○ Honor Student or Not: boolean (Type True or False to get valid results)
+- Honor Student or Not: boolean (Type True or False to get valid results)
 
-○ Email: String with max length of 50
+- Email: String with max length of 50
 
-○ GPA: positive double
+- GPA: positive double
 
 ● Update Student: click 4th box and provide the following information of the student you want to update:
 
-○ Student ID: integer (should be a valid ID)
+- Student ID: integer (should be a valid ID)
 
-○ First Name: a string with max length of 200
+- First Name: a string with max length of 200
 
-○ Last Name: a string with max length of 200
+- Last Name: a string with max length of 200
 
-○ Credit He/She Earned: positive integer
+- Credit He/She Earned: positive integer
 
-○ Class (the year that the student is in): one of the following: freshman,
+- Class (the year that the student is in): one of the following: freshman,
 sophomore, junior, senior
 
-○ Honor Student or Not: boolean (Type True or False to get valid results)
+- Honor Student or Not: boolean (Type True or False to get valid results)
 
-○ Email: String with max length of 50
+- Email: String with max length of 50
 
-○ GPA: positive double
+- GPA: positive double
 
 ● Delete Student: click one the last box and provide the following information of the student you want to delete:
 (please make sure that you want to delete this student’s record)
-○ Student ID: integer (should be a valid ID and does not have any records in CourseStudent since this is used as a foreign key)
+- Student ID: integer (should be a valid ID and does not have any records in CourseStudent since this is used as a foreign key)
 
 ### 2. List each stored procedure (the parameters and what is expecting to return):
 
